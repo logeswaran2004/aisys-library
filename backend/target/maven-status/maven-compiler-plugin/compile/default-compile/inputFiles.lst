@@ -1,0 +1,14 @@
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\auth\CustomUserDetailsService.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\user\UserRepository.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\user\Role.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\user\User.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\catalog\ItemRepository.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\catalog\BibliographicRecord.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\member\Member.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\config\SecurityConfig.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\LibraryApplication.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\audit\AuditService.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\audit\AuditLog.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\catalog\Item.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\member\MemberRepository.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\audit\AuditLogRepository.java

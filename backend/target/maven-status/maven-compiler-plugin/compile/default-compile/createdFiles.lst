@@ -1,0 +1,14 @@
+com\aisys\library\user\Role.class
+com\aisys\library\catalog\ItemRepository.class
+com\aisys\library\user\User.class
+com\aisys\library\catalog\BibliographicRecord.class
+com\aisys\library\audit\AuditLog.class
+com\aisys\library\member\Member.class
+com\aisys\library\audit\AuditLogRepository.class
+com\aisys\library\audit\AuditService.class
+com\aisys\library\LibraryApplication.class
+com\aisys\library\user\UserRepository.class
+com\aisys\library\auth\CustomUserDetailsService.class
+com\aisys\library\config\SecurityConfig.class
+com\aisys\library\member\MemberRepository.class
+com\aisys\library\catalog\Item.class
