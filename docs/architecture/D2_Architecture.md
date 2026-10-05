@@ -51,3 +51,9 @@ public interface NotificationProvider {
 * **Target OS:** Windows 11 / Windows Server 2022.
 * **Environment:** Completely isolated offline LAN.
 * **Containers:** Docker Compose running \ackend-app\, \rontend-app\, and \mysql-db\.
+
+## Security Controls
+* **Authentication:** JWT-based stateless authentication.
+* **Authorization:** Role-Based Access Control (RBAC) supporting ADMIN, LIBRARIAN, and CIRCULATION_STAFF.
+* **Data Protection:** BCrypt password hashing; all REST APIs protected by Spring Security filters.
+* **Audit:** Action, timestamp, and actor recorded for all migration and circulation events.
