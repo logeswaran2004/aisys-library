@@ -14,6 +14,9 @@ public class Item {
     @Column(unique = true)
     private String barcode;
     
+    @Column(name = "rfid_tag_id", unique = true)
+    private String rfidTagId;
+    
     @ManyToOne
     @JoinColumn(name = "bibliographic_record_id", nullable = false)
     private BibliographicRecord bibliographicRecord;
@@ -22,7 +25,12 @@ public class Item {
 
     public Long getId() { return id; }
     public String getAccessionNumber() { return accessionNumber; }
+    public String getBarcode() { return barcode; }
+    public String getRfidTagId() { return rfidTagId; }
     public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
     public BibliographicRecord getBibliographicRecord() { return bibliographicRecord; }
+
+    public void setBarcode(String barcode) { this.barcode = barcode; }
+    public void setRfidTagId(String rfidTagId) { this.rfidTagId = rfidTagId; }
+    public void setStatus(String status) { this.status = status; }
 }

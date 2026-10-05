@@ -32,3 +32,8 @@
 | NFR01| Data Integrity (No overwrites) | DB Constraints, Migration logic| Pending |
 | NFR02| Security, Privacy, RBAC | Auth, Spring Security | Pending |
 | NFR06| Versioned DB & Modular code | Flyway, Project Structure | Pending |
+
+## D4/D5 RTM Update
+* **FR01, FR04 (Core & Circulation):** Implemented via CirculationService & MemberService.
+* **FR02 (Search):** Implemented via SearchController (OPAC).
+* **FR08 (Dashboard):** Implemented via DashboardController.
