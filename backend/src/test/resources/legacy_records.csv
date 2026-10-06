@@ -1,0 +1,5 @@
+﻿Title,Author,Barcode,ISBN
+The Hobbit,J.R.R. Tolkien,LEGACY-001,978-0345339683
+1984,George Orwell,LEGACY-002,978-0451524935
+Invalid Book,,LEGACY-003,
+Duplicate Book,Author,LEGACY-001,123-456

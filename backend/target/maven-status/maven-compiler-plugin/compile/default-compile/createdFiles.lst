@@ -11,6 +11,7 @@ com\aisys\library\audit\AuditService.class
 com\aisys\library\auth\CustomUserDetailsService.class
 com\aisys\library\integration\MockCameraSubsystem.class
 com\aisys\library\integration\MockNcipAdapter.class
+com\aisys\library\migration\LegacyItem.class
 com\aisys\library\member\MemberService.class
 com\aisys\library\rfid\RfidService.class
 com\aisys\library\rfid\MockRfidReader.class
@@ -26,6 +27,7 @@ com\aisys\library\integration\SmartCardReader.class
 com\aisys\library\member\MemberRepository.class
 com\aisys\library\member\MemberController.class
 com\aisys\library\member\FineService.class
+com\aisys\library\migration\MigrationResult.class
 com\aisys\library\catalog\Item.class
 com\aisys\library\integration\MockNotificationService.class
 com\aisys\library\catalog\CatalogController.class
@@ -45,6 +47,7 @@ com\aisys\library\LibraryApplication.class
 com\aisys\library\user\UserRepository.class
 com\aisys\library\rfid\SecurityGateListener.class
 com\aisys\library\member\FineController.class
+com\aisys\library\migration\DataMigrationService.class
 com\aisys\library\catalog\SearchController.class
 com\aisys\library\acquisition\AcquisitionRepository.class
 com\aisys\library\circulation\CirculationController$ErrorResponse.class
@@ -56,6 +59,7 @@ com\aisys\library\integration\NcipAdapter.class
 com\aisys\library\rfid\CameraIntegrationService.class
 com\aisys\library\rfid\RfidNotificationService.class
 com\aisys\library\config\SecurityConfig.class
+com\aisys\library\migration\LegacyItemRepository.class
 com\aisys\library\reporting\DashboardController.class
 com\aisys\library\rfid\SecurityGateEvent.class
 com\aisys\library\acquisition\Acquisition.class

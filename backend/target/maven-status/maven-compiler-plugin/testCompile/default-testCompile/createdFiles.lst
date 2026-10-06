@@ -4,5 +4,6 @@ com\aisys\library\CirculationJourneyTest.class
 com\aisys\library\OfflineEventServiceTest.class
 com\aisys\library\rfid\RfidFinalWorkflowsTest$1.class
 com\aisys\library\LibraryApplicationTests.class
+com\aisys\library\migration\MigrationDatabaseTest.class
 com\aisys\library\rfid\RfidFinalWorkflowsTest.class
 com\aisys\library\rfid\RfidWorkflowsTest.class
