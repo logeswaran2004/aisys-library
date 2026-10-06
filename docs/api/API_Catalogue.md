@@ -21,3 +21,8 @@
 ## Filterable Reports (FR08)
 * **GET /api/v1/reports/circulation?status={status}**
   * **Purpose:** Generates a filterable circulation report (e.g., status=OVERDUE).
+
+## Fines Management (FR04)
+* **POST /api/v1/fines/{memberId}/pay?amount={amount}**
+  * **Purpose:** Processes a fine payment and reduces the member's fine balance.
+  * **Auth:** Requires LIBRARIAN or CIRCULATION_STAFF role.

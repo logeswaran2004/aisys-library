@@ -37,3 +37,4 @@
 * **FR01, FR04 (Core & Circulation):** Implemented via CirculationService & MemberService.
 * **FR02 (Search):** Implemented via SearchController (OPAC).
 * **FR08 (Dashboard):** Implemented via DashboardController.
+* **FR04 (Fines & Restrictions):** Fine logic and payment processing mapped to FineService and FineController.
