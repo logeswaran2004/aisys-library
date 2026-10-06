@@ -1,4 +1,4 @@
-﻿# D0 - Initiation & Controls
+# D0 - Initiation & Controls
 
 ## Assumptions
 * The offline deployment requires all static assets, container images, and database initialization scripts to be bundled into a single distributable archive.
@@ -20,21 +20,20 @@
 ## Initial Requirements Traceability Matrix (RTM)
 | ID | Requirement | Target Module | Status |
 | :--- | :--- | :--- | :--- |
-| FR01 | Core ILMS operations | Catalog, Circulation | Pending |
-| FR02 | Web interface & Search | OPAC, Search API | Pending |
+| FR01 | Core ILMS operations | Catalog, Circulation, Members, Acq, Serials | Implemented (D4) |
+| FR02 | Web interface & Search | OPAC, Search API | Implemented (D4) |
 | FR03 | RFID Interoperability & NCIP/SIP2 | RFID Middleware, ILMS Adapter | Pending |
-| FR04 | Circulation & Restrictions | Circulation, Fines, Members | Pending |
+| FR04 | Circulation & Restrictions | Circulation, Fines, Members | Implemented (D4) |
 | FR05 | Tagging & Validation | RFID, Catalog | Pending |
 | FR06 | Inventory & Shelf Mgmt | Inventory, RFID | Pending |
 | FR07 | Security Gate Events | RFID, Notifications | Pending |
-| FR08 | Dashboard & Reports | Reporting, Dashboard API | Pending |
+| FR08 | Dashboard & Reports | Reporting, Dashboard API | Implemented (D4) |
 | FR10 | 20k Record Migration | Migration, Validation | Pending |
 | NFR01| Data Integrity (No overwrites) | DB Constraints, Migration logic| Pending |
 | NFR02| Security, Privacy, RBAC | Auth, Spring Security | Pending |
-| NFR06| Versioned DB & Modular code | Flyway, Project Structure | Pending |
+| NFR06| Versioned DB & Modular code | Flyway, Project Structure | Implemented (D3) |
 
-## D4/D5 RTM Update
-* **FR01, FR04 (Core & Circulation):** Implemented via CirculationService & MemberService.
-* **FR02 (Search):** Implemented via SearchController (OPAC).
-* **FR08 (Dashboard):** Implemented via DashboardController.
-* **FR04 (Fines & Restrictions):** Fine logic and payment processing mapped to FineService and FineController.
+## D4/D5 Architectural Mappings
+* **FR01, FR04:** Implemented via CirculationService, MemberService, FineService, AcquisitionRepository, and SerialRepository.
+* **FR02:** Implemented via SearchController (OPAC).
+* **FR08:** Implemented via DashboardController and ReportController.
