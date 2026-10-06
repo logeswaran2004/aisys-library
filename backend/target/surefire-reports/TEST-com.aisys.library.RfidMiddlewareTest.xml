@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.aisys.library.LibraryApplicationTests" time="0.025" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.aisys.library.RfidMiddlewareTest" time="1.174" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -49,7 +49,7 @@
     <property name="localRepository" value="C:\Users\loges\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\loges\AppData\Local\Temp\"/>
-    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="com.zaxxer.hikari.pool_number" value="2"/>
     <property name="java.version" value="21.0.7"/>
     <property name="user.dir" value="C:\Users\loges\aisys-library\backend"/>
     <property name="os.arch" value="amd64"/>
@@ -66,9 +66,57 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="contextLoads" classname="com.aisys.library.LibraryApplicationTests" time="0.005">
-    <system-out><![CDATA[2026-10-06T18:51:18.801+05:30  INFO 25700 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.aisys.library.LibraryApplicationTests]: LibraryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-10-06T18:51:18.812+05:30  INFO 25700 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.aisys.library.LibraryApplication for test class com.aisys.library.LibraryApplicationTests
+  <testcase name="testDuplicateEventSuppression" classname="com.aisys.library.RfidMiddlewareTest" time="0.204">
+    <system-out><![CDATA[2026-10-06T18:51:18.866+05:30  INFO 25700 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.aisys.library.RfidMiddlewareTest]: RfidMiddlewareTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-06T18:51:18.867+05:30  INFO 25700 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.aisys.library.LibraryApplication for test class com.aisys.library.RfidMiddlewareTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-10-06T18:51:18.893+05:30  INFO 25700 --- [           main] com.aisys.library.RfidMiddlewareTest     : Starting RfidMiddlewareTest using Java 21.0.7 with PID 25700 (started by loges in C:\Users\loges\aisys-library\backend)
+2026-10-06T18:51:18.894+05:30  INFO 25700 --- [           main] com.aisys.library.RfidMiddlewareTest     : No active profile set, falling back to 1 default profile: "default"
+2026-10-06T18:51:19.114+05:30  INFO 25700 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T18:51:19.129+05:30  INFO 25700 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 9 JPA repository interfaces.
+2026-10-06T18:51:19.202+05:30  INFO 25700 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-06T18:51:19.204+05:30  INFO 25700 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb2 user=\
+2026-10-06T18:51:19.205+05:30  INFO 25700 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-06T18:51:19.212+05:30  INFO 25700 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb2 (H2 2.2)
+2026-10-06T18:51:19.213+05:30  WARN 25700 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2026-10-06T18:51:19.216+05:30  INFO 25700 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-10-06T18:51:19.216+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.002s)
+2026-10-06T18:51:19.217+05:30  INFO 25700 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-10-06T18:51:19.221+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2026-10-06T18:51:19.223+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - Initial Foundation"
+2026-10-06T18:51:19.232+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - Core Library Schema"
+2026-10-06T18:51:19.241+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "4 - Acquisition Serials Schema"
+2026-10-06T18:51:19.245+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "5 - Add security gate events"
+2026-10-06T18:51:19.248+05:30  INFO 25700 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 4 migrations to schema "PUBLIC", now at version v5 (execution time 00:00.012s)
+2026-10-06T18:51:19.281+05:30  INFO 25700 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-06T18:51:19.283+05:30  INFO 25700 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-06T18:51:19.289+05:30  INFO 25700 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T18:51:19.291+05:30  WARN 25700 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-06T18:51:19.393+05:30  INFO 25700 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T18:51:19.396+05:30  INFO 25700 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T18:51:19.513+05:30  WARN 25700 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-06T18:51:19.655+05:30  INFO 25700 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-10-06T18:51:19.672+05:30  INFO 25700 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@244cdad1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c81f484, org.springframework.security.web.context.SecurityContextHolderFilter@7ffe0471, org.springframework.security.web.header.HeaderWriterFilter@47cd2c21, org.springframework.web.filter.CorsFilter@62c6c467, org.springframework.security.web.authentication.logout.LogoutFilter@21384a8e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7fece723, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cca4a87, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48ac2da4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fab1ec6, org.springframework.security.web.access.ExceptionTranslationFilter@3f570944, org.springframework.security.web.access.intercept.AuthorizationFilter@17699e35]
+2026-10-06T18:51:19.830+05:30  INFO 25700 --- [           main] com.aisys.library.RfidMiddlewareTest     : Started RfidMiddlewareTest in 0.96 seconds (process running for 7.504)
+Hibernate: select count(*) from security_gate_events sge1_0
+Hibernate: select sge1_0.id,sge1_0.accession_number,sge1_0.cctv_image_ref,sge1_0.gate_id,sge1_0.rfid_tag_id,sge1_0.status,sge1_0.timestamp from security_gate_events sge1_0
+Hibernate: select i1_0.id,i1_0.accession_number,i1_0.barcode,i1_0.bibliographic_record_id,i1_0.rfid_tag_id,i1_0.status from items i1_0
+Hibernate: select br1_0.id,br1_0.author,br1_0.is_reference,br1_0.isbn,br1_0.title from bibliographic_records br1_0 where br1_0.id=?
+Hibernate: insert into security_gate_events (accession_number,cctv_image_ref,gate_id,rfid_tag_id,status,timestamp,id) values (?,?,?,?,?,?,default)
+ALERT TRIGGERED: Security Gate GATE-NORTH breached by tag TAG-999
+2026-10-06T18:51:20.029+05:30  INFO 25700 --- [           main] com.aisys.library.audit.AuditService     : AUDIT | Actor: SYSTEM | Action: GATE_ALARM | Resource: TAG-999 | Result: TRIGGERED
+Hibernate: insert into audit_logs (action,actor,ip_address,resource,result,timestamp,id) values (?,?,?,?,?,?,default)
+Hibernate: select count(*) from security_gate_events sge1_0
+Hibernate: select sge1_0.id,sge1_0.accession_number,sge1_0.cctv_image_ref,sge1_0.gate_id,sge1_0.rfid_tag_id,sge1_0.status,sge1_0.timestamp from security_gate_events sge1_0
+Hibernate: select count(*) from security_gate_events sge1_0
 ]]></system-out>
   </testcase>
 </testsuite>
