@@ -1,8 +1,11 @@
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\LibraryApplicationTests.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\rfid\RfidWorkflowsTest.java
+C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\verification\PerformanceVerificationTest.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\rfid\RfidEdgeCasesTest.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\migration\MigrationDatabaseTest.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\rfid\RfidFinalWorkflowsTest.java
+C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\verification\SecurityVerificationTest.java
+C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\verification\SystemOperationsVerificationTest.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\CirculationJourneyTest.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\OfflineEventServiceTest.java
 C:\Users\loges\aisys-library\backend\src\test\java\com\aisys\library\RfidMiddlewareTest.java

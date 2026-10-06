@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.aisys.library.LibraryApplicationTests" time="0.012" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.aisys.library.verification.SystemOperationsVerificationTest" time="0.84" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -49,7 +49,7 @@
     <property name="localRepository" value="C:\Users\loges\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\loges\AppData\Local\Temp\"/>
-    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="com.zaxxer.hikari.pool_number" value="4"/>
     <property name="java.version" value="21.0.7"/>
     <property name="user.dir" value="C:\Users\loges\aisys-library\backend"/>
     <property name="os.arch" value="amd64"/>
@@ -66,9 +66,47 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="contextLoads" classname="com.aisys.library.LibraryApplicationTests" time="0.004">
-    <system-out><![CDATA[2026-10-06T22:51:10.021+05:30  INFO 9920 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.aisys.library.LibraryApplicationTests]: LibraryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-10-06T22:51:10.023+05:30  INFO 9920 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.aisys.library.LibraryApplication for test class com.aisys.library.LibraryApplicationTests
+  <testcase name="testDatabaseBackupAndRestoreSimulation" classname="com.aisys.library.verification.SystemOperationsVerificationTest" time="0.022">
+    <system-out><![CDATA[2026-10-06T22:51:12.260+05:30  INFO 9920 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.aisys.library.verification.SystemOperationsVerificationTest]: SystemOperationsVerificationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-06T22:51:12.267+05:30  INFO 9920 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.aisys.library.LibraryApplication for test class com.aisys.library.verification.SystemOperationsVerificationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-10-06T22:51:12.284+05:30  INFO 9920 --- [           main] c.a.l.v.SystemOperationsVerificationTest : Starting SystemOperationsVerificationTest using Java 21.0.7 with PID 9920 (started by loges in C:\Users\loges\aisys-library\backend)
+2026-10-06T22:51:12.284+05:30  INFO 9920 --- [           main] c.a.l.v.SystemOperationsVerificationTest : No active profile set, falling back to 1 default profile: "default"
+2026-10-06T22:51:12.462+05:30  INFO 9920 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T22:51:12.478+05:30  INFO 9920 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 10 JPA repository interfaces.
+2026-10-06T22:51:12.555+05:30  INFO 9920 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-10-06T22:51:12.558+05:30  INFO 9920 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:opstestdb user=SA
+2026-10-06T22:51:12.558+05:30  INFO 9920 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-10-06T22:51:12.569+05:30  INFO 9920 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:opstestdb (H2 2.2)
+2026-10-06T22:51:12.570+05:30  WARN 9920 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2026-10-06T22:51:12.573+05:30  INFO 9920 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-10-06T22:51:12.573+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 5 migrations (execution time 00:00.003s)
+2026-10-06T22:51:12.574+05:30  INFO 9920 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-10-06T22:51:12.579+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2026-10-06T22:51:12.581+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - Initial Foundation"
+2026-10-06T22:51:12.588+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - Core Library Schema"
+2026-10-06T22:51:12.597+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "4 - Acquisition Serials Schema"
+2026-10-06T22:51:12.601+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "5 - Add security gate events"
+2026-10-06T22:51:12.604+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "6 - Add legacy items"
+2026-10-06T22:51:12.606+05:30  INFO 9920 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 5 migrations to schema "PUBLIC", now at version v6 (execution time 00:00.011s)
+2026-10-06T22:51:12.624+05:30  INFO 9920 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-06T22:51:12.626+05:30  INFO 9920 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-06T22:51:12.630+05:30  INFO 9920 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T22:51:12.728+05:30  INFO 9920 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T22:51:12.729+05:30  INFO 9920 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T22:51:12.829+05:30  WARN 9920 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-06T22:51:12.939+05:30  INFO 9920 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-10-06T22:51:12.953+05:30  INFO 9920 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@615a30bd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@516ec5e4, org.springframework.security.web.context.SecurityContextHolderFilter@70ebf6d8, org.springframework.security.web.header.HeaderWriterFilter@9febb7c, org.springframework.web.filter.CorsFilter@2d2c3ab2, org.springframework.security.web.authentication.logout.LogoutFilter@6ad8f801, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@70a8159f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b3a4c43, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e320f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7039cffd, org.springframework.security.web.access.ExceptionTranslationFilter@2f2f6aaa, org.springframework.security.web.access.intercept.AuthorizationFilter@325401b3]
+2026-10-06T22:51:13.071+05:30  INFO 9920 --- [           main] c.a.l.v.SystemOperationsVerificationTest : Started SystemOperationsVerificationTest in 0.801 seconds (process running for 9.671)
 ]]></system-out>
   </testcase>
+  <testcase name="testOfflineUpdateScriptExecutionValidation" classname="com.aisys.library.verification.SystemOperationsVerificationTest" time="0.003"/>
 </testsuite>

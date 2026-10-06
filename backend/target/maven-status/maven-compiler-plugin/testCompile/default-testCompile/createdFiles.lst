@@ -1,9 +1,12 @@
+com\aisys\library\OfflineEventServiceTest.class
+com\aisys\library\rfid\RfidFinalWorkflowsTest$1.class
+com\aisys\library\rfid\RfidFinalWorkflowsTest.class
+com\aisys\library\verification\SecurityVerificationTest.class
 com\aisys\library\rfid\RfidEdgeCasesTest.class
 com\aisys\library\RfidMiddlewareTest.class
 com\aisys\library\CirculationJourneyTest.class
-com\aisys\library\OfflineEventServiceTest.class
-com\aisys\library\rfid\RfidFinalWorkflowsTest$1.class
+com\aisys\library\verification\SystemOperationsVerificationTest.class
 com\aisys\library\LibraryApplicationTests.class
 com\aisys\library\migration\MigrationDatabaseTest.class
-com\aisys\library\rfid\RfidFinalWorkflowsTest.class
+com\aisys\library\verification\PerformanceVerificationTest.class
 com\aisys\library\rfid\RfidWorkflowsTest.class
