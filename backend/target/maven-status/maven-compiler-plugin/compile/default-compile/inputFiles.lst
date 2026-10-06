@@ -10,11 +10,13 @@ C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\rfid\RfidRe
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\catalog\SearchController.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\ncip\MockNcipAdapter.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\catalog\BibliographicRecord.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\member\FineService.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\notification\NotificationProvider.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\member\Member.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\serial\Serial.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\config\SecurityConfig.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\LibraryApplication.java
+C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\member\FineController.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\rfid\SecurityGateListener.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\audit\AuditService.java
 C:\Users\loges\aisys-library\backend\src\main\java\com\aisys\library\circulation\CirculationRepository.java

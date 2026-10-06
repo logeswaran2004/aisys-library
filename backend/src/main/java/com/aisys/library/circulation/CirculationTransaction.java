@@ -40,6 +40,7 @@ public class CirculationTransaction {
         this.status = status;
     }
 
+    public Long getId() { return id; }
     public Item getItem() { return item; }
     public Member getMember() { return member; }
     public Instant getDueDate() { return dueDate; }

@@ -19,9 +19,16 @@ public class Member {
     @Column(name = "fine_balance")
     private BigDecimal fineBalance;
 
-    // Getters and Setters omitted for brevity but required by JPA
     public Long getId() { return id; }
     public String getMemberId() { return memberId; }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
     public String getStatus() { return status; }
     public BigDecimal getFineBalance() { return fineBalance; }
+
+    public void setMemberId(String memberId) { this.memberId = memberId; }
+    public void setName(String name) { this.name = name; }
+    public void setEmail(String email) { this.email = email; }
+    public void setStatus(String status) { this.status = status; }
+    public void setFineBalance(BigDecimal fineBalance) { this.fineBalance = fineBalance; }
 }

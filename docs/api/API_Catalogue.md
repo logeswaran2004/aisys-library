@@ -14,3 +14,10 @@
 ## Dashboard
 * **GET /api/v1/dashboard/stats**
   * **Purpose:** Retrieves library usage statistics (total items, members, tagged items).
+## Acquisitions & Serials (FR01)
+* **GET /api/v1/acquisitions** (Stubbed via Repository)
+* **GET /api/v1/serials** (Stubbed via Repository)
+
+## Filterable Reports (FR08)
+* **GET /api/v1/reports/circulation?status={status}**
+  * **Purpose:** Generates a filterable circulation report (e.g., status=OVERDUE).

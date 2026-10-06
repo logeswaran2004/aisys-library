@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.aisys.library.LibraryApplicationTests" time="0.027" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.aisys.library.CirculationJourneyTest" time="6.723" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -66,9 +66,67 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="contextLoads" classname="com.aisys.library.LibraryApplicationTests" time="0.006">
-    <system-out><![CDATA[2026-10-06T11:30:10.166+05:30  INFO 21248 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.aisys.library.LibraryApplicationTests]: LibraryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-10-06T11:30:10.167+05:30  INFO 21248 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.aisys.library.LibraryApplication for test class com.aisys.library.LibraryApplicationTests
+  <testcase name="demonstrateCheckoutJourney" classname="com.aisys.library.CirculationJourneyTest" time="0.67">
+    <system-out><![CDATA[11:30:03.599 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.aisys.library.CirculationJourneyTest]: CirculationJourneyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:30:03.700 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.aisys.library.LibraryApplication for test class com.aisys.library.CirculationJourneyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-10-06T11:30:04.135+05:30  INFO 21248 --- [           main] c.aisys.library.CirculationJourneyTest   : Starting CirculationJourneyTest using Java 21.0.7 with PID 21248 (started by loges in C:\Users\loges\aisys-library\backend)
+2026-10-06T11:30:04.136+05:30  INFO 21248 --- [           main] c.aisys.library.CirculationJourneyTest   : No active profile set, falling back to 1 default profile: "default"
+2026-10-06T11:30:05.171+05:30  INFO 21248 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T11:30:05.244+05:30  INFO 21248 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 8 JPA repository interfaces.
+2026-10-06T11:30:05.834+05:30  INFO 21248 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-06T11:30:06.066+05:30  INFO 21248 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-10-06T11:30:06.067+05:30  INFO 21248 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-06T11:30:06.155+05:30  INFO 21248 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2026-10-06T11:30:06.156+05:30  INFO 21248 --- [           main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2026-10-06T11:30:06.156+05:30  INFO 21248 --- [           main] o.f.c.internal.license.VersionPrinter    : 
+2026-10-06T11:30:06.197+05:30  INFO 21248 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.2)
+2026-10-06T11:30:06.201+05:30  WARN 21248 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2026-10-06T11:30:06.220+05:30  INFO 21248 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-10-06T11:30:06.222+05:30  INFO 21248 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.012s)
+2026-10-06T11:30:06.227+05:30  INFO 21248 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-10-06T11:30:06.247+05:30  INFO 21248 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2026-10-06T11:30:06.253+05:30  INFO 21248 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - Initial Foundation"
+2026-10-06T11:30:06.278+05:30  INFO 21248 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - Core Library Schema"
+2026-10-06T11:30:06.292+05:30  INFO 21248 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "4 - Acquisition Serials Schema"
+2026-10-06T11:30:06.297+05:30  INFO 21248 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.028s)
+2026-10-06T11:30:06.405+05:30  INFO 21248 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-06T11:30:06.483+05:30  INFO 21248 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-06T11:30:06.523+05:30  INFO 21248 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-06T11:30:06.785+05:30  INFO 21248 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T11:30:06.834+05:30  WARN 21248 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-06T11:30:07.724+05:30  INFO 21248 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T11:30:07.746+05:30  INFO 21248 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T11:30:08.269+05:30  WARN 21248 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-06T11:30:08.808+05:30  INFO 21248 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-10-06T11:30:08.873+05:30  INFO 21248 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e32a3ed, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e7aa27e, org.springframework.security.web.context.SecurityContextHolderFilter@35abfeba, org.springframework.security.web.header.HeaderWriterFilter@8cd00bc, org.springframework.web.filter.CorsFilter@2b778004, org.springframework.security.web.authentication.logout.LogoutFilter@7df0bb1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7b0d42b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4268c16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@124b1369, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e5b449c, org.springframework.security.web.access.ExceptionTranslationFilter@7d911f95, org.springframework.security.web.access.intercept.AuthorizationFilter@7d3cb276]
+2026-10-06T11:30:09.395+05:30  INFO 21248 --- [           main] c.aisys.library.CirculationJourneyTest   : Started CirculationJourneyTest in 5.524 seconds (process running for 6.487)
+Hibernate: select i1_0.id,i1_0.accession_number,i1_0.barcode,i1_0.bibliographic_record_id,i1_0.rfid_tag_id,i1_0.status from items i1_0 where i1_0.barcode=?
+Hibernate: select br1_0.id,br1_0.author,br1_0.is_reference,br1_0.isbn,br1_0.title from bibliographic_records br1_0 where br1_0.id=?
+Hibernate: select m1_0.id,m1_0.email,m1_0.fine_balance,m1_0.member_id,m1_0.name,m1_0.status from members m1_0 where m1_0.member_id=?
+Hibernate: select i1_0.id,i1_0.accession_number,i1_0.barcode,i1_0.bibliographic_record_id,i1_0.rfid_tag_id,i1_0.status from items i1_0 where i1_0.barcode=?
+Hibernate: select br1_0.id,br1_0.author,br1_0.is_reference,br1_0.isbn,br1_0.title from bibliographic_records br1_0 where br1_0.id=?
+Hibernate: select m1_0.id,m1_0.email,m1_0.fine_balance,m1_0.member_id,m1_0.name,m1_0.status from members m1_0 where m1_0.member_id=?
+Hibernate: insert into circulation_transactions (checkout_date,due_date,item_id,member_id,return_date,status,id) values (?,?,?,?,?,?,default)
+2026-10-06T11:30:10.103+05:30  INFO 21248 --- [           main] com.aisys.library.audit.AuditService     : AUDIT | Actor: TEST_STAFF | Action: CHECKOUT | Resource: ACC-1001 | Result: SUCCESS
+Hibernate: insert into audit_logs (action,actor,ip_address,resource,result,timestamp,id) values (?,?,?,?,?,?,default)
+Hibernate: update items set accession_number=?,barcode=?,bibliographic_record_id=?,rfid_tag_id=?,status=? where id=?
+Hibernate: select i1_0.id,i1_0.accession_number,i1_0.barcode,i1_0.bibliographic_record_id,i1_0.rfid_tag_id,i1_0.status from items i1_0 where i1_0.barcode=?
+Hibernate: select br1_0.id,br1_0.author,br1_0.is_reference,br1_0.isbn,br1_0.title from bibliographic_records br1_0 where br1_0.id=?
+Hibernate: select m1_0.id,m1_0.email,m1_0.fine_balance,m1_0.member_id,m1_0.name,m1_0.status from members m1_0 where m1_0.member_id=?
 ]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\loges\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
   </testcase>
 </testsuite>

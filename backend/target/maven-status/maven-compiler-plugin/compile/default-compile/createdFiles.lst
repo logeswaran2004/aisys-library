@@ -17,6 +17,7 @@ com\aisys\library\LibraryApplication.class
 com\aisys\library\user\UserRepository.class
 com\aisys\library\auth\CustomUserDetailsService.class
 com\aisys\library\rfid\SecurityGateListener.class
+com\aisys\library\member\FineController.class
 com\aisys\library\catalog\SearchController.class
 com\aisys\library\ncip\MockNcipAdapter.class
 com\aisys\library\acquisition\AcquisitionRepository.class
@@ -37,6 +38,7 @@ com\aisys\library\config\SecurityConfig.class
 com\aisys\library\member\MemberRepository.class
 com\aisys\library\member\MemberController.class
 com\aisys\library\reporting\DashboardController.class
+com\aisys\library\member\FineService.class
 com\aisys\library\acquisition\Acquisition.class
 com\aisys\library\catalog\Item.class
 com\aisys\library\inventory\InventoryService$InventoryReport.class
