@@ -5,4 +5,5 @@ import java.util.Optional;
 public interface ItemRepository extends JpaRepository<Item, Long> {
     Optional<Item> findByAccessionNumber(String accessionNumber);
     Optional<Item> findByBarcode(String barcode);
+    Optional<Item> findByRfidTagId(String rfidTagId);
 }

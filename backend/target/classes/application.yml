@@ -2,16 +2,26 @@ server:
   port: 8080
 spring:
   datasource:
-    url: \
-    username: \
-    password: \
+    url: jdbc:h2:file:./data/aisys-library;MODE=MySQL;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+    show-sql: false
+    open-in-view: true
   flyway:
     enabled: true
     baseline-on-migrate: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
 management:
   endpoints:
     web:
@@ -20,3 +30,9 @@ management:
   endpoint:
     health:
       show-details: always
+library:
+  circulation:
+    fine-limit: 50.00
+  jwt:
+    secret: aisys-library-offline-jwt-secret-key-must-be-256-bits
+    expiration-ms: 86400000

@@ -1,0 +1,5 @@
+-- V3 Placeholder: ensures continuous Flyway version sequence between V2 and V4.
+-- No schema changes are applied in this migration.  It exists only to prevent
+-- "Detected resolved migration not applied to database: 3" failures when
+-- running under strict Flyway configuration (ignoreMissingMigrations=false).
+-- Intentionally empty.

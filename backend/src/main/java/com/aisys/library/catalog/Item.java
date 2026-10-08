@@ -30,7 +30,9 @@ public class Item {
     public String getStatus() { return status; }
     public BibliographicRecord getBibliographicRecord() { return bibliographicRecord; }
 
+    public void setAccessionNumber(String accessionNumber) { this.accessionNumber = accessionNumber; }
     public void setBarcode(String barcode) { this.barcode = barcode; }
     public void setRfidTagId(String rfidTagId) { this.rfidTagId = rfidTagId; }
     public void setStatus(String status) { this.status = status; }
+    public void setBibliographicRecord(BibliographicRecord bibliographicRecord) { this.bibliographicRecord = bibliographicRecord; }
 }

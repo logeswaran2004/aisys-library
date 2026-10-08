@@ -42,5 +42,5 @@ CREATE TABLE circulation_transactions (
 INSERT INTO members (member_id, name, email, status) VALUES ('M1001', 'John Doe', 'john@example.com', 'ACTIVE');
 INSERT INTO members (member_id, name, email, status) VALUES ('M1002', 'Jane Blocked', 'jane@example.com', 'BLOCKED');
 
-INSERT INTO bibliographic_records (isbn, title, author, is_reference) VALUES ('978-0134685991', 'Effective Java', 'Joshua Bloch', FALSE);
+INSERT INTO bibliographic_records (isbn, title, author, publisher, is_reference) VALUES ('978-0134685991', 'Effective Java', 'Joshua Bloch', 'Addison-Wesley', FALSE);
 INSERT INTO items (accession_number, barcode, bibliographic_record_id, status) VALUES ('ACC-1001', 'BC-1001', 1, 'AVAILABLE');

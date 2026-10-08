@@ -32,6 +32,12 @@ public class CatalogService {
         auditService.logAction(actor, "CREATE_ITEM", item.getAccessionNumber(), "SUCCESS");
         return saved;
     }
+
+    public Item saveItem(Item item, String actor, String action) {
+        Item saved = itemRepository.save(item);
+        auditService.logAction(actor, action, item.getAccessionNumber(), "SUCCESS");
+        return saved;
+    }
     
     public Optional<Item> getItemByBarcode(String barcode) {
         return itemRepository.findByBarcode(barcode);

@@ -26,4 +26,15 @@ public class AuditLog {
         this.resource = resource;
         this.result = result;
     }
+
+    public Long getId() { return id; }
+    public String getActor() { return actor; }
+    public String getAction() { return action; }
+    public String getResource() { return resource; }
+    public Instant getTimestamp() { return timestamp; }
+    public String getResult() { return result; }
+    public String getIpAddress() { return ipAddress; }
+
+    public void setTimestamp(Instant timestamp) { this.timestamp = timestamp; }
+    public void setIpAddress(String ipAddress) { this.ipAddress = ipAddress; }
 }

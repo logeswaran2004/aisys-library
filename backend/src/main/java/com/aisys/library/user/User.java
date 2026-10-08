@@ -25,7 +25,14 @@ public class User {
     )
     private Set<Role> roles;
 
+    public Long getId() { return id; }
     public String getUsername() { return username; }
     public String getPasswordHash() { return passwordHash; }
     public Set<Role> getRoles() { return roles; }
+    public String getStatus() { return status; }
+
+    public void setUsername(String username) { this.username = username; }
+    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
+    public void setStatus(String status) { this.status = status; }
+    public void setRoles(Set<Role> roles) { this.roles = roles; }
 }

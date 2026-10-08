@@ -18,4 +18,10 @@ public class MockRfidReader implements RfidReader {
         log.info("MOCK RFID | Scanning nearby tags...");
         return List.of("RFID-TAG-1001", "RFID-TAG-1002");
     }
+
+    @Override
+    public boolean writeTag(String tagId, String data) {
+        log.info("MOCK RFID | Writing tag {} with data {}", tagId, data);
+        return tagId != null && data != null;
+    }
 }

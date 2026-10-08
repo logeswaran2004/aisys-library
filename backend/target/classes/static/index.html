@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AISYS RFID Library</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>AISYS RFID Library</h1>
+      <p class="muted">Offline-capable middleware, catalog, circulation, and migration desk</p>
+    </div>
+    <div id="session" class="session">Not signed in</div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel">
+      <h2>Sign in</h2>
+      <label>Username <input id="username" value="admin"></label>
+      <label>Password <input id="password" type="password" value="admin123"></label>
+      <button id="loginBtn">Login</button>
+      <p class="hint">admin / admin123 · librarian / librarian123 · staff / staff123</p>
+      <nav>
+        <button data-tab="opac">OPAC search</button>
+        <button data-tab="circ">Circulation</button>
+        <button data-tab="rfid">RFID tagging</button>
+        <button data-tab="inventory">Inventory</button>
+        <button data-tab="gate">Security gate</button>
+        <button data-tab="migration">Migration</button>
+        <button data-tab="dash">Dashboard</button>
+      </nav>
+    </aside>
+
+    <section class="panel work">
+      <article id="opac" class="tab">
+        <h2>Public catalog (OPAC)</h2>
+        <div class="row">
+          <input id="searchQuery" placeholder="Title or author">
+          <button id="searchBtn">Search</button>
+        </div>
+        <pre id="searchOut" class="out"></pre>
+      </article>
+
+      <article id="circ" class="tab hidden">
+        <h2>Checkout / check-in</h2>
+        <div class="row">
+          <input id="circBarcode" placeholder="Item barcode" value="BC-1001">
+          <input id="circMember" placeholder="Member ID" value="M1001">
+          <button id="checkoutBtn">Checkout</button>
+          <button id="checkinBtn">Check-in</button>
+        </div>
+        <pre id="circOut" class="out"></pre>
+      </article>
+
+      <article id="rfid" class="tab hidden">
+        <h2>Tag commissioning</h2>
+        <div class="row">
+          <input id="tagBarcode" placeholder="Item barcode" value="BC-1002">
+          <input id="tagId" placeholder="RFID tag ID" value="RFID-NEW-1002">
+          <button id="tagBtn">Associate tag</button>
+          <button id="readerBtn">Mock reader scan</button>
+        </div>
+        <pre id="rfidOut" class="out"></pre>
+      </article>
+
+      <article id="inventory" class="tab hidden">
+        <h2>Shelf inventory sweep</h2>
+        <div class="row">
+          <input id="invTags" placeholder="Scanned tags, comma separated" value="RFID-TAG-1001">
+          <button id="invBtn">Reconcile shelf</button>
+        </div>
+        <pre id="invOut" class="out"></pre>
+      </article>
+
+      <article id="gate" class="tab hidden">
+        <h2>Security gate event</h2>
+        <div class="row">
+          <input id="gateId" value="GATE-NORTH">
+          <input id="gateTag" value="RFID-TAG-1001">
+          <button id="gateBtn">Raise alarm</button>
+          <button id="gateListBtn">List events</button>
+        </div>
+        <pre id="gateOut" class="out"></pre>
+      </article>
+
+      <article id="migration" class="tab hidden">
+        <h2>Legacy spreadsheet migration</h2>
+        <input id="migFile" type="file" accept=".csv">
+        <label class="inline"><input id="dryRun" type="checkbox"> Dry run</label>
+        <button id="migBtn">Upload</button>
+        <p class="hint">CSV columns: Title, Author, Barcode, ISBN</p>
+        <pre id="migOut" class="out"></pre>
+      </article>
+
+      <article id="dash" class="tab hidden">
+        <h2>Dashboard and reports</h2>
+        <div class="row">
+          <button id="statsBtn">Load stats</button>
+          <button id="reportBtn">Circulation report</button>
+        </div>
+        <pre id="dashOut" class="out"></pre>
+      </article>
+    </section>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

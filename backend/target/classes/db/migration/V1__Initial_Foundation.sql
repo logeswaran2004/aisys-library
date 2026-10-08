@@ -30,6 +30,6 @@ CREATE TABLE audit_logs (
 );
 
 INSERT INTO roles (name) VALUES ('ADMIN'), ('LIBRARIAN'), ('CIRCULATION_STAFF'), ('INVENTORY_STAFF'), ('VIEWER');
--- Synthetic default admin (password: admin123 hashed via BCrypt)
-INSERT INTO users (username, password_hash) VALUES ('admin', '\\\... synthetic hash...');
+-- Synthetic default admin. Password is reset to admin123 on startup via BCrypt.
+INSERT INTO users (username, password_hash, status) VALUES ('admin', '$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG', 'ACTIVE');
 INSERT INTO user_roles (user_id, role_id) VALUES (1, 1);

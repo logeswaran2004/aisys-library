@@ -13,6 +13,16 @@ public class Acquisition {
     private BigDecimal cost;
     private String status; // e.g., ORDERED, RECEIVED
 
+    public Long getId() { return id; }
     public String getTitle() { return title; }
+    public String getVendor() { return vendor; }
+    public String getPoNumber() { return poNumber; }
+    public BigDecimal getCost() { return cost; }
     public String getStatus() { return status; }
+
+    public void setTitle(String title) { this.title = title; }
+    public void setVendor(String vendor) { this.vendor = vendor; }
+    public void setPoNumber(String poNumber) { this.poNumber = poNumber; }
+    public void setCost(BigDecimal cost) { this.cost = cost; }
+    public void setStatus(String status) { this.status = status; }
 }

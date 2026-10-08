@@ -24,4 +24,10 @@ public class CatalogController {
         String actor = (principal != null) ? principal.getName() : "SYSTEM";
         return catalogService.createRecord(record, actor);
     }
+
+    @PostMapping("/items")
+    public Item createItem(@RequestBody Item item, Principal principal) {
+        String actor = (principal != null) ? principal.getName() : "SYSTEM";
+        return catalogService.createItem(item, actor);
+    }
 }

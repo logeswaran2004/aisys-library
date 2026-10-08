@@ -34,6 +34,11 @@ public class SecurityGateEvent {
         this.cctvImageRef = cctvImageRef;
     }
 
+    public Long getId() { return id; }
+    public String getGateId() { return gateId; }
     public String getRfidTagId() { return rfidTagId; }
+    public String getAccessionNumber() { return accessionNumber; }
     public Instant getTimestamp() { return timestamp; }
+    public String getStatus() { return status; }
+    public String getCctvImageRef() { return cctvImageRef; }
 }

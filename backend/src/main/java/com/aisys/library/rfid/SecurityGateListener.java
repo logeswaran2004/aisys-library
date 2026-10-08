@@ -30,7 +30,8 @@ public class SecurityGateListener {
         log.warn("GATE ALARM TRIGGERED for Tag: {}", event.getTagId());
         
         // AC06: Identify Item & Check Circulation Status
-        Optional<Item> itemOpt = itemRepository.findByBarcode(event.getTagId()); // Simplified mapping for mock
+        Optional<Item> itemOpt = itemRepository.findByRfidTagId(event.getTagId())
+                .or(() -> itemRepository.findByBarcode(event.getTagId()));
         if (itemOpt.isPresent()) {
             Item item = itemOpt.get();
             if (!"ISSUED".equals(item.getStatus())) {

@@ -56,8 +56,7 @@ public class RfidService {
             }
         }
 
-        Optional<Item> itemOpt = itemRepository.findAll().stream()
-                .filter(i -> tagId.equals(i.getRfidTagId())).findFirst();
+        Optional<Item> itemOpt = itemRepository.findByRfidTagId(tagId);
         
         String accession = itemOpt.map(Item::getAccessionNumber).orElse("UNKNOWN_TAG");
         
