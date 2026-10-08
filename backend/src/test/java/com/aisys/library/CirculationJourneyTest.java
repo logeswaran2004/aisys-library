@@ -1,11 +1,17 @@
 package com.aisys.library;
 
+import com.aisys.library.circulation.CirculationRepository;
 import com.aisys.library.circulation.CirculationService;
 import com.aisys.library.circulation.CirculationTransaction;
+import com.aisys.library.member.FineService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
+
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
@@ -21,6 +27,12 @@ class CirculationJourneyTest {
 
     @Autowired
     private CirculationService circulationService;
+
+    @Autowired
+    private CirculationRepository circulationRepository;
+
+    @Autowired
+    private FineService fineService;
 
     @Test
     void demonstrateCheckoutJourney() {
@@ -41,5 +53,18 @@ class CirculationJourneyTest {
             circulationService.checkout("BC-1001", "M1001", "TEST_STAFF");
         });
         assertTrue(notAvailableEx.getMessage().contains("Item is not available for checkout."));
+    }
+
+    @Test
+    void overdueCheckinAccruesFineAndRenewWorksBeforeDue() {
+        CirculationTransaction tx = circulationService.checkout("BC-1002", "M1001", "TEST_STAFF");
+        CirculationTransaction renewed = circulationService.renew("BC-1002", "TEST_STAFF");
+        assertTrue(renewed.getDueDate().isAfter(tx.getDueDate()));
+
+        renewed.setDueDate(Instant.now().minus(3, ChronoUnit.DAYS));
+        circulationRepository.save(renewed);
+        circulationService.checkin("BC-1002", "TEST_STAFF");
+        assertFalse(fineService.listOutstanding().isEmpty());
+        assertFalse(fineService.historyForMember("M1001").isEmpty());
     }
 }

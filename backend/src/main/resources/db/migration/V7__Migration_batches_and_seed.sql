@@ -16,7 +16,7 @@ VALUES ('978-0000000001', 'Reference Desk Atlas', 'Library Staff', 'AISYS Press'
 
 INSERT INTO items (accession_number, barcode, rfid_tag_id, bibliographic_record_id, status)
 SELECT 'ACC-1002', 'BC-1002', 'RFID-TAG-1002', id, 'AVAILABLE'
-FROM bibliographic_records WHERE isbn = '978-0134685991';
+FROM bibliographic_records WHERE isbn = '978-0000000001';
 
 INSERT INTO items (accession_number, barcode, rfid_tag_id, bibliographic_record_id, status)
 SELECT 'ACC-REF-1', 'BC-REF-1', 'RFID-TAG-REF-1', id, 'AVAILABLE'

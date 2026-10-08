@@ -43,9 +43,15 @@ public class CirculationTransaction {
     public Long getId() { return id; }
     public Item getItem() { return item; }
     public Member getMember() { return member; }
+    public Instant getCheckoutDate() { return checkoutDate; }
     public Instant getDueDate() { return dueDate; }
+    public Instant getReturnDate() { return returnDate; }
     public String getStatus() { return status; }
     
+    public void setId(Long id) { this.id = id; }
+    public void setItem(Item item) { this.item = item; }
+    public void setMember(Member member) { this.member = member; }
+    public void setCheckoutDate(Instant checkoutDate) { this.checkoutDate = checkoutDate; }
     public void setReturnDate(Instant returnDate) { this.returnDate = returnDate; }
     public void setStatus(String status) { this.status = status; }
     public void setDueDate(Instant dueDate) { this.dueDate = dueDate; }

@@ -1,6 +1,7 @@
 package com.aisys.library.migration;
 
 import com.aisys.library.audit.AuditService;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,11 +20,14 @@ public class DataMigrationService {
     private final LegacyItemRepository repository;
     private final AuditService auditService;
     private final JdbcTemplate jdbcTemplate;
+    private final ApplicationEventPublisher eventPublisher;
 
-    public DataMigrationService(LegacyItemRepository repository, AuditService auditService, JdbcTemplate jdbcTemplate) {
+    public DataMigrationService(LegacyItemRepository repository, AuditService auditService, JdbcTemplate jdbcTemplate,
+                                ApplicationEventPublisher eventPublisher) {
         this.repository = repository;
         this.auditService = auditService;
         this.jdbcTemplate = jdbcTemplate;
+        this.eventPublisher = eventPublisher;
     }
 
     @Transactional
@@ -83,6 +87,7 @@ public class DataMigrationService {
                     isDryRun ? "DRY_RUN" : "COMPLETED"
             );
             auditService.logAction(actor, "MIGRATION_UPLOAD", filename, isDryRun ? "DRY_RUN" : "SUCCESS");
+            eventPublisher.publishEvent(new MigrationCompletedEvent(this, filename, isDryRun, actor, result));
         } catch (Exception e) {
             result.errorLogs.add("Migration failed: " + e.getMessage());
             auditService.logAction(actor, "MIGRATION_UPLOAD", filename, "FAILED");

@@ -18,6 +18,8 @@ spring:
     console:
       enabled: true
       path: /h2-console
+      settings:
+        web-allow-others: false
   servlet:
     multipart:
       max-file-size: 25MB
@@ -33,6 +35,10 @@ management:
 library:
   circulation:
     fine-limit: 50.00
+    daily-fine-rate: 1.00
+    loan-days: 14
+  notification:
+    ops-email: admin@library.local
   jwt:
     secret: aisys-library-offline-jwt-secret-key-must-be-256-bits
     expiration-ms: 86400000

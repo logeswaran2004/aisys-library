@@ -2,6 +2,7 @@ package com.aisys.library.inventory;
 
 import com.aisys.library.rfid.InventoryScannerService;
 import com.aisys.library.rfid.RfidReader;
+import com.aisys.library.rfid.RfidService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -14,11 +15,14 @@ public class InventoryController {
     private final InventoryService inventoryService;
     private final InventoryScannerService scannerService;
     private final RfidReader rfidReader;
+    private final RfidService rfidService;
 
-    public InventoryController(InventoryService inventoryService, InventoryScannerService scannerService, RfidReader rfidReader) {
+    public InventoryController(InventoryService inventoryService, InventoryScannerService scannerService,
+                               RfidReader rfidReader, RfidService rfidService) {
         this.inventoryService = inventoryService;
         this.scannerService = scannerService;
         this.rfidReader = rfidReader;
+        this.rfidService = rfidService;
     }
 
     @GetMapping("/scan")
@@ -30,6 +34,7 @@ public class InventoryController {
             scanned = rfidReader.readTags();
         }
         scannerService.processBatchTagging(scanned);
+        rfidService.publishDetectedTags(scanned, "INVENTORY_SCAN");
         return inventoryService.reconcileShelf(split(expected), scanned);
     }
 
@@ -37,6 +42,7 @@ public class InventoryController {
     public Map<String, Object> scanBody(@RequestBody ScanRequest request) {
         List<String> scanned = request.tags() == null ? rfidReader.readTags() : request.tags();
         scannerService.processBatchTagging(scanned);
+        rfidService.publishDetectedTags(scanned, "INVENTORY_SCAN");
         return inventoryService.reconcileShelf(request.expected(), scanned);
     }
 

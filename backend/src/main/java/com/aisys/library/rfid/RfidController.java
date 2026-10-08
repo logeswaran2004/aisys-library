@@ -12,6 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping({"/api/v1/rfid", "/api/rfid"})
 public class RfidController {
+    private final SmartCardAuthService smartCardAuthService;
     private final RfidService rfidService;
     private final TagCommissioningService tagCommissioningService;
     private final CatalogService catalogService;
@@ -20,11 +21,12 @@ public class RfidController {
     private final ApplicationEventPublisher eventPublisher;
     private final OfflineEventService offlineEventService;
 
-    public RfidController(RfidService rfidService, TagCommissioningService tagCommissioningService,
+    public RfidController(SmartCardAuthService smartCardAuthService, RfidService rfidService, TagCommissioningService tagCommissioningService,
                           CatalogService catalogService, RfidReader rfidReader,
                           SecurityGateEventRepository gateEventRepository,
                           ApplicationEventPublisher eventPublisher,
                           OfflineEventService offlineEventService) {
+        this.smartCardAuthService = smartCardAuthService; // <-- Add this line
         this.rfidService = rfidService;
         this.tagCommissioningService = tagCommissioningService;
         this.catalogService = catalogService;
@@ -37,6 +39,16 @@ public class RfidController {
     @PostMapping("/event")
     public ResponseEntity<String> handleGateEvent(@RequestBody Map<String, String> payload) {
         return handleGateAlarm(payload);
+    }
+
+    @PostMapping("/smart-card/auth")
+    public ResponseEntity<Map<String, Object>> authenticateSmartCard(@RequestBody Map<String, String> payload) {
+        String smartCardId = payload.get("smartCardId");
+        boolean authenticated = smartCardAuthService.authenticatePatron(smartCardId);
+        return ResponseEntity.ok(Map.of(
+            "smartCardId", smartCardId,
+            "authenticated", authenticated
+    ));
     }
 
     @PostMapping("/gate-event")
@@ -70,7 +82,9 @@ public class RfidController {
     @GetMapping("/scan")
     public List<String> scanReader() {
         rfidReader.connect();
-        return rfidReader.readTags();
+        List<String> tags = rfidReader.readTags();
+        rfidService.publishDetectedTags(tags, "READER_SCAN");
+        return tags;
     }
 
     @GetMapping("/gate-events")

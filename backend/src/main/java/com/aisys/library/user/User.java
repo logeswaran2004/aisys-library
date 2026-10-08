@@ -1,5 +1,6 @@
 package com.aisys.library.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ public class User {
     @Column(unique = true, nullable = false)
     private String username;
     
+    @JsonIgnore
     @Column(name = "password_hash", nullable = false)
     private String passwordHash;
     
@@ -27,10 +29,12 @@ public class User {
 
     public Long getId() { return id; }
     public String getUsername() { return username; }
+    @JsonIgnore
     public String getPasswordHash() { return passwordHash; }
     public Set<Role> getRoles() { return roles; }
     public String getStatus() { return status; }
 
+    public void setId(Long id) { this.id = id; }
     public void setUsername(String username) { this.username = username; }
     public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
     public void setStatus(String status) { this.status = status; }

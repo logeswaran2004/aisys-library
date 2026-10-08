@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.aisys.library.migration.MigrationDatabaseTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.678 s -- in com.aisys.library.migration.MigrationDatabaseTest

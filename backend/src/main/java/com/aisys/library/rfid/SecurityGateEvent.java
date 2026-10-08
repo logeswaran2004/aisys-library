@@ -41,4 +41,12 @@ public class SecurityGateEvent {
     public Instant getTimestamp() { return timestamp; }
     public String getStatus() { return status; }
     public String getCctvImageRef() { return cctvImageRef; }
+
+    public void setId(Long id) { this.id = id; }
+    public void setGateId(String gateId) { this.gateId = gateId; }
+    public void setRfidTagId(String rfidTagId) { this.rfidTagId = rfidTagId; }
+    public void setAccessionNumber(String accessionNumber) { this.accessionNumber = accessionNumber; }
+    public void setTimestamp(Instant timestamp) { this.timestamp = timestamp; }
+    public void setStatus(String status) { this.status = status; }
+    public void setCctvImageRef(String cctvImageRef) { this.cctvImageRef = cctvImageRef; }
 }

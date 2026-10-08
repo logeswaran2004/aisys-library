@@ -26,6 +26,7 @@ public class Member {
     public String getStatus() { return status; }
     public BigDecimal getFineBalance() { return fineBalance; }
 
+    public void setId(Long id) { this.id = id; }
     public void setMemberId(String memberId) { this.memberId = memberId; }
     public void setName(String name) { this.name = name; }
     public void setEmail(String email) { this.email = email; }

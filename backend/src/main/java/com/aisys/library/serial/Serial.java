@@ -15,6 +15,7 @@ public class Serial {
     public String getIssn() { return issn; }
     public String getFrequency() { return frequency; }
 
+    public void setId(Long id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
     public void setIssn(String issn) { this.issn = issn; }
     public void setFrequency(String frequency) { this.frequency = frequency; }

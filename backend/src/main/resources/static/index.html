@@ -21,15 +21,19 @@
       <label>Username <input id="username" value="admin"></label>
       <label>Password <input id="password" type="password" value="admin123"></label>
       <button id="loginBtn">Login</button>
-      <p class="hint">admin / admin123 · librarian / librarian123 · staff / staff123</p>
+      <p class="hint">admin/admin123 · librarian/librarian123 · staff/staff123 · inventory/inventory123 · viewer/viewer123</p>
       <nav>
         <button data-tab="opac">OPAC search</button>
         <button data-tab="circ">Circulation</button>
+        <button data-tab="fines">Fines</button>
         <button data-tab="rfid">RFID tagging</button>
+        <button data-tab="smartcard">Smart card</button>
         <button data-tab="inventory">Inventory</button>
         <button data-tab="gate">Security gate</button>
         <button data-tab="migration">Migration</button>
+        <button data-tab="admin">Users &amp; audit</button>
         <button data-tab="dash">Dashboard</button>
+        <button data-tab="backup">Backup &amp; restore</button>
       </nav>
     </aside>
 
@@ -43,15 +47,39 @@
         <pre id="searchOut" class="out"></pre>
       </article>
 
+      <article id="smartcard" class="tab hidden">
+        <h2>Smart card authentication</h2>
+        <div class="row">
+          <input id="smartCardId" placeholder="Smart card ID" value="SC-1001">
+          <button id="smartCardBtn">Authenticate</button>
+        </div>
+        <pre id="smartCardOut" class="out"></pre>
+      </article>
+
       <article id="circ" class="tab hidden">
-        <h2>Checkout / check-in</h2>
+        <h2>Checkout / check-in / renew</h2>
         <div class="row">
           <input id="circBarcode" placeholder="Item barcode" value="BC-1001">
           <input id="circMember" placeholder="Member ID" value="M1001">
           <button id="checkoutBtn">Checkout</button>
           <button id="checkinBtn">Check-in</button>
+          <button id="renewBtn">Renew</button>
+          <button id="loansBtn">Active loans</button>
         </div>
         <pre id="circOut" class="out"></pre>
+      </article>
+
+      <article id="fines" class="tab hidden">
+        <h2>Fines</h2>
+        <div class="row">
+          <input id="fineMember" placeholder="Member ID" value="M1001">
+          <input id="fineAmount" placeholder="Amount" value="1.00">
+          <button id="fineListBtn">Outstanding</button>
+          <button id="fineHistBtn">History</button>
+          <button id="fineAddBtn">Add fine</button>
+          <button id="finePayBtn">Pay</button>
+        </div>
+        <pre id="fineOut" class="out"></pre>
       </article>
 
       <article id="rfid" class="tab hidden">
@@ -94,6 +122,16 @@
         <pre id="migOut" class="out"></pre>
       </article>
 
+      <article id="admin" class="tab hidden">
+        <h2>Users, roles, audit</h2>
+        <div class="row">
+          <button id="usersBtn">List users</button>
+          <button id="rolesBtn">List roles</button>
+          <button id="auditBtn">Audit log</button>
+        </div>
+        <pre id="adminOut" class="out"></pre>
+      </article>
+
       <article id="dash" class="tab hidden">
         <h2>Dashboard and reports</h2>
         <div class="row">
@@ -101,6 +139,16 @@
           <button id="reportBtn">Circulation report</button>
         </div>
         <pre id="dashOut" class="out"></pre>
+      </article>
+
+
+      <article id="backup" class="tab hidden">
+        <h2>Database backup and restore (AC 10)</h2>
+        <div class="row">
+          <button id="backupBtn">Create backup</button>
+          <button id="restoreBtn">Restore from backup</button>
+        </div>
+        <pre id="backupOut" class="out"></pre>
       </article>
     </section>
   </main>

@@ -20,6 +20,7 @@ public class Acquisition {
     public BigDecimal getCost() { return cost; }
     public String getStatus() { return status; }
 
+    public void setId(Long id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
     public void setVendor(String vendor) { this.vendor = vendor; }
     public void setPoNumber(String poNumber) { this.poNumber = poNumber; }

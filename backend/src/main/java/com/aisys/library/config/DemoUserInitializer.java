@@ -28,6 +28,8 @@ public class DemoUserInitializer implements CommandLineRunner {
         ensureUser("admin", "admin123", "ADMIN");
         ensureUser("librarian", "librarian123", "LIBRARIAN");
         ensureUser("staff", "staff123", "CIRCULATION_STAFF");
+        ensureUser("inventory", "inventory123", "INVENTORY_STAFF");
+        ensureUser("viewer", "viewer123", "VIEWER");
     }
 
     private void ensureUser(String username, String rawPassword, String roleName) {

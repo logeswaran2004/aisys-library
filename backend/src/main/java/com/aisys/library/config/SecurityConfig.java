@@ -39,14 +39,30 @@ public class SecurityConfig {
             .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/index.html", "/assets/**", "/h2-console/**",
+                .requestMatchers("/", "/index.html", "/assets/**",
                         "/actuator/health", "/actuator/info", "/error", "/api/v1/auth/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/v1/search/**", "/api/v1/catalog/records").permitAll()
+                .requestMatchers("/h2-console/**").hasRole("ADMIN")
+                .requestMatchers("/api/v1/users/**", "/api/v1/roles/**").hasRole("ADMIN")
                 .requestMatchers("/api/v1/migration/**", "/api/migration/**").hasAnyRole("ADMIN", "LIBRARIAN")
+                .requestMatchers("/api/v1/audit/**").hasAnyRole("ADMIN", "LIBRARIAN", "VIEWER")
+                .requestMatchers(HttpMethod.GET, "/api/v1/search/**", "/api/v1/catalog/records").permitAll()
+                .requestMatchers(HttpMethod.GET,
+                        "/api/v1/catalog/**",
+                        "/api/v1/members/**",
+                        "/api/v1/reports/**",
+                        "/api/v1/dashboard/**",
+                        "/api/v1/fines/**",
+                        "/api/v1/circulation/**",
+                        "/api/v1/acquisitions/**",
+                        "/api/v1/serials/**")
+                    .hasAnyRole("ADMIN", "LIBRARIAN", "CIRCULATION_STAFF", "INVENTORY_STAFF", "VIEWER")
                 .requestMatchers("/api/v1/circulation/**", "/api/v1/fines/**")
                     .hasAnyRole("ADMIN", "LIBRARIAN", "CIRCULATION_STAFF")
                 .requestMatchers("/api/v1/rfid/**", "/api/rfid/**", "/api/v1/inventory/**")
                     .hasAnyRole("ADMIN", "LIBRARIAN", "CIRCULATION_STAFF", "INVENTORY_STAFF")
+                .requestMatchers("/api/v1/members/**", "/api/v1/catalog/**",
+                        "/api/v1/acquisitions/**", "/api/v1/serials/**")
+                    .hasAnyRole("ADMIN", "LIBRARIAN")
                 .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults())
             .authenticationProvider(authenticationProvider())

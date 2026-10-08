@@ -38,12 +38,13 @@ document.getElementById("loginBtn").onclick = async () => {
       password: document.getElementById("password").value
     })
   });
-  if (result.body && result.body.token) {
+  if (result.ok && result.body && result.body.token) {
     state.token = result.body.token;
     localStorage.setItem("aisysToken", state.token);
     setSession();
+  } else {
+    document.getElementById("session").textContent = "Login failed";
   }
-  show("searchOut", result.body);
 };
 
 document.getElementById("searchBtn").onclick = async () => {
@@ -66,6 +67,48 @@ document.getElementById("checkinBtn").onclick = async () => {
     method: "POST", headers: headers(),
     body: JSON.stringify({ barcode: document.getElementById("circBarcode").value })
   })).body);
+};
+
+document.getElementById("renewBtn").onclick = async () => {
+  show("circOut", (await api("/api/v1/circulation/renew", {
+    method: "POST", headers: headers(),
+    body: JSON.stringify({ barcode: document.getElementById("circBarcode").value })
+  })).body);
+};
+
+document.getElementById("loansBtn").onclick = async () => {
+  const memberId = encodeURIComponent(document.getElementById("circMember").value);
+  show("circOut", (await api("/api/v1/circulation/member/" + memberId + "?status=ACTIVE", { headers: headers(false) })).body);
+};
+
+document.getElementById("fineListBtn").onclick = async () => {
+  show("fineOut", (await api("/api/v1/fines", { headers: headers(false) })).body);
+};
+document.getElementById("fineHistBtn").onclick = async () => {
+  const id = encodeURIComponent(document.getElementById("fineMember").value);
+  show("fineOut", (await api("/api/v1/fines/" + id, { headers: headers(false) })).body);
+};
+document.getElementById("fineAddBtn").onclick = async () => {
+  const id = encodeURIComponent(document.getElementById("fineMember").value);
+  show("fineOut", (await api("/api/v1/fines/" + id, {
+    method: "POST", headers: headers(),
+    body: JSON.stringify({ amount: document.getElementById("fineAmount").value, reason: "Manual desk fine" })
+  })).body);
+};
+document.getElementById("finePayBtn").onclick = async () => {
+  const id = encodeURIComponent(document.getElementById("fineMember").value);
+  const amount = encodeURIComponent(document.getElementById("fineAmount").value);
+  show("fineOut", (await api("/api/v1/fines/" + id + "/pay?amount=" + amount, { method: "POST", headers: headers(false) })).body);
+};
+
+document.getElementById("usersBtn").onclick = async () => {
+  show("adminOut", (await api("/api/v1/users", { headers: headers(false) })).body);
+};
+document.getElementById("rolesBtn").onclick = async () => {
+  show("adminOut", (await api("/api/v1/roles", { headers: headers(false) })).body);
+};
+document.getElementById("auditBtn").onclick = async () => {
+  show("adminOut", (await api("/api/v1/audit", { headers: headers(false) })).body);
 };
 
 document.getElementById("tagBtn").onclick = async () => {
@@ -121,6 +164,22 @@ document.getElementById("statsBtn").onclick = async () => {
 
 document.getElementById("reportBtn").onclick = async () => {
   show("dashOut", (await api("/api/v1/reports/circulation", { headers: headers(false) })).body);
+};
+document.getElementById("smartCardBtn").onclick = async () => {
+  show("smartCardOut", (await api("/api/v1/rfid/smart-card/auth", {
+    method: "POST", 
+    headers: headers(),
+    body: JSON.stringify({ 
+      smartCardId: document.getElementById("smartCardId").value 
+    })
+  })).body);
+};
+document.getElementById("backupBtn").onclick = async () => {
+  show("backupOut", (await api("/api/v1/backup/create", { method: "POST", headers: headers() })).body);
+};
+
+document.getElementById("restoreBtn").onclick = async () => {
+  show("backupOut", (await api("/api/v1/backup/restore", { method: "POST", headers: headers() })).body);
 };
 
 setSession();
