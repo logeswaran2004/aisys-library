@@ -18,3 +18,17 @@
 
 ## Acceptance Criteria
 * **AC01 - AC10:** Defined per the SOP priority acceptance scenarios. See root README/RTM for tracking.
+
+## Assumptions
+1. **Infrastructure:** Target deployment environment is an isolated Windows Server 2022 or Windows 11 client with no internet access.
+2. **Data Availability:** Legacy migration data is provided as a clean CSV matching the 20,000-record threshold constraint.
+3. **Hardware Integration:** Physical RFID gates, handheld scanners, and smart card readers are unavailable; interfaces are fulfilled via mocked software adapters.
+
+## Clarification Log
+- **Q:** How should offline deployment be handled without external package managers?
+  - **A:** The system is packaged as a self-contained Spring Boot executable JAR (fat JAR) with all Maven dependencies bundled.
+- **Q:** What is the mechanism for the AC 10 backup requirement?
+  - **A:** An embedded backup service handles active file-copy snapshots of the local H2 `.mv.db` database file before data state changes.
+
+## Traceability Matrix
+*(Note: Full Requirement-to-Feature mapping is tracked in docs/verification/Test_Results_RTM.md)*

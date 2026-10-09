@@ -1,0 +1,40 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: aisys_library
+      MYSQL_USER: aisys
+      MYSQL_PASSWORD: aisys
+      MYSQL_ROOT_PASSWORD: aisysroot
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend-app:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      MYSQL_URL: jdbc:mysql://mysql-db:3306/aisys_library?allowPublicKeyRetrieval=true&useSSL=false
+      MYSQL_USER: aisys
+      MYSQL_PASSWORD: aisys
+    depends_on:
+      mysql-db:
+        condition: service_healthy
+
+  frontend-app:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend-app
+
+volumes:
+  mysql_data:

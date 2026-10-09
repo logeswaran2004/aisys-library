@@ -1,0 +1,29 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "aisys-library-backend",
+      "version": "1.0.0-SNAPSHOT",
+      "description": "AISYS RFID library middleware. Third-party libraries listed below are the Spring Boot 3.2.5 stack declared in backend/pom.xml."
+    }
+  },
+  "components": [
+    {"type": "library", "name": "spring-boot-starter-web", "version": "3.2.5", "group": "org.springframework.boot"},
+    {"type": "library", "name": "spring-boot-starter-data-jpa", "version": "3.2.5", "group": "org.springframework.boot"},
+    {"type": "library", "name": "spring-boot-starter-security", "version": "3.2.5", "group": "org.springframework.boot"},
+    {"type": "library", "name": "spring-boot-starter-validation", "version": "3.2.5", "group": "org.springframework.boot"},
+    {"type": "library", "name": "spring-boot-starter-actuator", "version": "3.2.5", "group": "org.springframework.boot"},
+    {"type": "library", "name": "spring-boot-starter-test", "version": "3.2.5", "group": "org.springframework.boot"},
+    {"type": "library", "name": "spring-security-test", "version": "6.2.4", "group": "org.springframework.security"},
+    {"type": "library", "name": "flyway-core", "version": "10.10.0", "group": "org.flywaydb"},
+    {"type": "library", "name": "flyway-mysql", "version": "10.10.0", "group": "org.flywaydb"},
+    {"type": "library", "name": "mysql-connector-j", "group": "com.mysql", "description": "runtime"},
+    {"type": "library", "name": "h2", "group": "com.h2database"},
+    {"type": "library", "name": "jjwt-api", "version": "0.12.5", "group": "io.jsonwebtoken"},
+    {"type": "library", "name": "jjwt-impl", "version": "0.12.5", "group": "io.jsonwebtoken"},
+    {"type": "library", "name": "jjwt-jackson", "version": "0.12.5", "group": "io.jsonwebtoken"}
+  ]
+}

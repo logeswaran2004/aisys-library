@@ -40,5 +40,5 @@ library:
   notification:
     ops-email: admin@library.local
   jwt:
-    secret: aisys-library-offline-jwt-secret-key-must-be-256-bits
+    secret: ${JWT_SECRET:aisys-library-offline-jwt-secret-key-must-be-256-bits}
     expiration-ms: 86400000
