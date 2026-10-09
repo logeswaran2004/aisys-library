@@ -90,3 +90,7 @@ CSV migration columns: `Title,Author,Barcode,ISBN`.
 ## SBOM
 
 CycloneDX inventory: `SBOM/cyclonedx-sbom.json`.
+
+
+## 🎥 Project Demonstration
+[![Watch the AISYS Library Demo](https://img.shields.io/badge/Watch-Live%20Demo-blue?style=for-the-badge&logo=microsoft-onedrive)](https://amritauniv-my.sharepoint.com/:v:/g/personal/am_en_u4cse22132_am_students_amrita_edu/IQCDnUSGC06HQLdeRIMU7lSUAX1pwyBx_R9kQABnR4w2720?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=puM7B0)
