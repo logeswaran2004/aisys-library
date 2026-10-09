@@ -68,7 +68,12 @@ Useful slices:
 
 - `com.aisys.library.CirculationJourneyTest` — checkout rules
 - `com.aisys.library.verification.SecurityVerificationTest` — Spring Security / JWT RBAC via MockMvc
-- `com.aisys.library.verification.PerformanceVerificationTest` — `InventoryService.reconcileShelf` and 20k-row migration dry-run
+- `com.aisys.library.verification.PerformanceVerificationTest` — `InventoryService.reconcileShelf` and 20k-row migration dry-
+
+## Deployment & Lifecycle (AC 09 & AC 10)
+For instructions on offline installation, database backup/restore, and applying offline software patches, please refer to:
+- **Operational Runbook:** `docs/operations/D8_Operational_Docs.md`
+- **Lifecycle Scripts:** Found in the `deployment/` directory.
 
 ## Selected API surface
 
